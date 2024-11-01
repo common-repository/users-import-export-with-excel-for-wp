@@ -1,0 +1,522 @@
+/**
+*	TABLE OF CONTENTS 
+*	STYLING THE BACKEND SETTINS PAGE OF Import Export Users & Customers for WordPress and WooCommerce 
+*	Unique identifier: imue
+*
+*	Main Container - line 21
+*	Header Elements - line 27
+*	Footer Elements - line 33
+*	Ajaxify - line 42
+*	Container Elements - line 62
+*	Instructions Elements - line 91
+*	MainResponsesContainer - line 120
+*	Excel Upload Elements - line 164
+*	Form Elements - line 187
+*	Grid - Import Page - line 220
+*	Rest Elements - line 258
+*	Responsive - line 284
+*
+**/
+
+/* === Main Container === */
+
+.imue{
+		overflow:hidden;
+}
+
+/* === Header Elements === */
+
+.imueHeader{
+	width:100%;
+}
+
+/* === Footer Elements === */
+.imueLogo{
+	float:right;
+}
+.imueLogo img{
+	max-width:150px;
+}
+
+
+/* === Ajaxify === */
+.imue.loading > * {
+    opacity:0.2;
+}
+
+.imue.loading:before {
+    position:fixed;
+    content: "Loading...";
+    font-size:2em;
+    padding: 22px;
+    background: #000;
+    background: url(../images/loading.gif) no-repeat center center;
+    color: #777;
+    width: 50%;
+    height:50%;
+    margin-left:15%;
+    box-sizing: border-box;
+    text-align:center;
+}
+
+/* === Container Elements === */
+
+.imue,.imue p{
+		font-size:14px;
+}
+
+.imue h2{
+		font-size:16px;
+}
+
+.imue iframe{
+	width:100%;
+	height:500px;
+}
+
+.imue h3{
+		font-size:15px;
+}
+.imue h4{
+		font-size:15px;
+}
+
+.imue .center{
+	text-align:center;
+}
+
+
+
+
+/* === Instructions Elements  === */
+
+.imue .imageinfo,
+.imue .ductInfo,
+.imue .updateinfo{
+	display:none;
+}
+.imue .imageHandling,
+.imue .ductHandling.
+.updateHandling{
+	padding:10px;
+	margin-bottom:10px;
+}
+
+.imue table{
+		text-align:center;
+}
+.imue th{
+		background:#777;
+		color:#fff;
+		padding:5px;
+}
+
+
+.imue .exportTableWrapper{
+	overflow-x:scroll;
+}
+
+
+/* ============ Responses  =============== */
+
+.imue .msg,.imue .response{
+		background:#fff;
+		padding:10px;
+		margin:5px;
+		border:1px solid #777;
+		display:none;
+		position:absolute;
+		left:30%;
+		top:5%;
+		width:60%;
+}
+.imue .success{
+		background:lightGreen;
+		border:1px solid green;
+		color:#fff;
+		padding:5px;
+}
+.imue .error{
+		background:#FFCCCB;
+		border:1px solid red;
+		padding:5px;
+}
+.imue .warning{
+		background:#d9534f;
+		color:#fff;
+		padding:5px;
+}
+.imue .exportToggler{
+	margin-bottom:10px;
+}	
+
+.imue .importMessageSussess{
+		background:lightGreen;
+		padding:5px;
+		border:1px solid green;
+		color:#fff;
+}
+.imue .importMessageSussess a, .imue .success a{
+		color:#000;
+}
+
+
+/* ======= Excel Upload Elements ======= */
+
+
+.imue .uploader {
+	position:relative;
+	width:99%; 
+	height:300px;
+	background:#f3f3f3; 
+	border:1px dashed #e8e8e8;
+	background-size:cover;
+	margin:0 auto;
+	text-align:center;
+	background:url('../images/default.png') no-repeat left center;
+}
+.imueFile{		
+	width:100%;
+	position:absolute;	
+	height:300px;
+	top:0;
+	left:0;
+	z-index:2;
+	opacity:0;
+	cursor:pointer;
+}
+.imue .uploader .userSelected{
+	max-width:90%;
+	width:90%;
+	z-index:1;
+	border:none;
+	display:none;
+}
+
+
+
+/* ============ Form Elements ============ */
+
+.woo-form-wrapper, .woo-form-wrapper form{
+	overflow:hidden;
+	min-height:400px;
+	width:100%;
+}
+.imue input[type=text],.imue input[type=number], .imue textarea{
+		border:none;
+		border-bottom:1px solid #0073aa;
+		transition:all .3s ease-in-out;
+		cursor:text;
+}
+.imue input[type=text]:hover,.imue input[type=number]:hover, .imue textarea:hover{
+		background:#ffffcc;
+}
+
+.tableexport-caption{
+	text-align:left;
+	padding:10px;
+}
+
+/* =============== Grid - Import Page  ================== */
+
+.imue  .column1,
+.imue  .columns2,
+.imue  .columns3,
+.imue  .columns4,
+.imue  .columns5,
+.imue  .columns6{
+	float:left;
+	box-sizing:border-box;
+	padding:10px;
+	margin:0 0.5%;
+}
+
+.imue .columns2, .imue .columns3 h2{
+	color:#0073aa;
+}
+
+.imue  .column1{
+	width:100%;
+	float:none;
+}
+.imue  .columns2{
+	width:49% ;
+}
+.imue  .columns3{
+	width:32.3% ;
+}
+.imue  .columns4{
+	width:24%;
+}
+.imue  .columns5{
+	width:19%;
+}
+.imue  .columns6{
+	width:15.6%;
+}
+
+/* =============== Rest Elements ================== */
+
+.imue .startPosts,.imue .totalPosts{
+	display:none;
+}
+.imue #mygress {
+  width: 100%;
+  background-color: #ddd;
+}
+
+.imue #myBar {
+  width: 1%;
+  height: 30px;
+  background-color: #4CAF50;
+}
+
+.imue .nav-tab-wrapper a[href*="instructions"]{
+		background:green;
+		color:#fff;
+		border:1px solid green;	
+}
+
+.imue .thisNum{
+	display:none;
+}
+
+/* ANIMATION RIGHT TO LEFT*/
+@-webkit-keyframes rightToLeft{ 
+	0% {
+	    opacity: 0;
+	    -webkit-transform: translateX(300px);
+	    -moz-transform: translateX(300px);
+	    transform: translateX(300px) ;
+	    
+	}
+	30% {
+	    opacity: 1;
+	    -webkit-transform: translateX(0px) ;
+	    -moz-transform: translateX(0px) ;
+	    transform: translateX(0px) ;
+
+	}
+	100% {
+	    opacity: 1;
+	    -webkit-transform: scale(1) ;
+	    -moz-transform:  scale(1) ;
+	    transform:  scale(1) ;
+	    
+	}
+}
+
+.rightToLeft{
+    -webkit-animation: rightToLeft 2s ease-in-out;
+    -moz-animation: rightToLeft 2s ease-in-out;
+    -o-animation: rightToLeft 2s ease-in-out;
+    -ms-animation: rightToLeft 2s ease-in-out;
+    animation: rightToLeft 2s ease-in-out;	
+	
+}
+
+/*  PRO VERSION MODAL */
+#imue_popup , #imue_extensions_popup{
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 9999999999999999999999; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+#imue_popup .modal-content , #imue_extensions_popup .imue_extensions_content{
+    background-color: #fefefe;
+    margin: 10% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+#imue_popup .close , #imue_extensions_popup .imueclose{
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+#imue_popup .close:hover,
+#imue_popup .close:focus 
+#imue_extensions_popup .imueclose:hover,
+#imue_extensions_popup .imueclose:focus{
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#imue_popup .columns2{
+	width:50%;
+	float:left;
+}
+
+#imue_Popup .clearfix{
+	overflow:hidden;
+	clear:both;
+	width:100%;
+	box-sizing:border-box;
+}
+#imue_popup .verticalAlign{
+  display: flex;
+  align-items: center;
+  justify-content: center;	
+}
+
+.imue  .right_wrap ul{
+		font-size:12px;
+		list-style:square;
+		padding-left:20px;
+}
+
+.imue .right_wrap h2{
+	border-bottom:1px solid #0085ba;
+	padding-bottom:5px;
+}
+
+
+
+.imue .premium_button, #imue_popup  .premium_button{
+		background:#9B2E91;
+		color:#fff;
+		padding:12px 0;
+		margin:5px;
+		text-decoration:none;
+		border-radius:5px;
+		box-shadow: 0 2px 3px #ccc;
+		font-size:1.2em;
+		display:block;
+}
+.imue .premium_button:hover, #imue_popup  .premium_button:hover{
+		background:#fff !important;
+		color:#9B2E91 !important;
+}
+
+.imue .premium_img{
+	width:150px;
+	height:150px;	
+}
+
+.imue .premium{
+	cursor:pointer;
+}
+.imue td.premium{
+	color:#ccc;
+}
+.imue span.premium{
+
+	color:#0085ba;	
+}
+.imue span.premium:hover{
+	text-decoration:underline;
+}
+
+.imue  .nav-tab-wrapper a.instructions{
+	color:#0085ba;
+}
+.imue  .nav-tab-wrapper a.premium{
+	color:#F08080;
+}
+
+.imue input.readonly, .imue input:readonly, .imue select.readonly, .imue select:readonly, .imue textarea.readonly, .imue textarea:readonly {
+
+    background: rgba(255,255,255,.5);
+    border-color: rgba(222,222,222,.75);
+    box-shadow: inset 0 1px 2px rgba(0,0,0,.04);
+    color: rgba(51,51,51,.35);
+
+}
+option.premium,input[type=date].premium{
+	color:#ccc
+}
+
+.imue .mainWrapper{
+	width:70%;
+	box-sizing:border-box;
+	float:left;
+}
+.imue .proVersion{
+	background:#fff;
+	float:right;
+	padding:10px;
+	width:28%;
+	box-sizing:border-box;
+	box-shadow:0 2px 2px #000;
+}
+
+
+.imue .rating span, .imue .rating i {
+  color: gold;
+}
+
+.imue_extensions_content .ex_columns{
+    flex: 0 50%;
+	padding:20px;
+	box-sizing:border-box;
+}
+.imue_extensions_content .ex_columns:nth-child(even) {
+    border-right: 1px solid #efefef;
+}
+.imue_extensions_content{
+	text-align:center;
+	display: flex;
+	flex-wrap: wrap;	
+}
+.imue_extensions_content h3 a,.imue_extensions_content h2{
+	color:#21b384;
+}
+.imue_extensions_content h2{
+	padding:20px;
+	text-align:center;
+	flex: 0 100%;
+	border-bottom: 1px solid #efefef;
+}
+
+.imue_extensions_content img{
+	width:200px;
+}
+
+/* =============== Responsive ================== */
+
+@media(max-width:992px){
+	
+	.imue  .columns2,.imue  .columns3,.imue  .columns4,.imue  .columns5,.imue  .columns6{
+		float:none;
+		width:99%;
+	}	
+	
+	.imue  .left_wrap, .imue .right_wrap{
+		float:none;
+		width:100%;
+		border-right:none;
+	}
+
+	.imue .border{
+		border-right:none;
+	}
+
+	#imue_popup .columns2{
+		width:100%;
+		float:none;
+	}
+
+	.imue .mainWrapper,
+	.imue .proVersion{
+		float:none;
+		width:100%;
+	}
+	
+	.imue .ex_columns{
+		 flex: 0 100%;
+	}	
+		
+}
